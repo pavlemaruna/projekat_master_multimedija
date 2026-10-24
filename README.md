@@ -3,18 +3,34 @@
 Program obrađuje `project_video03.mp4` i prikazuje granice trake, zelenu
 površinu između njih, približnu krivinu i bočni položaj vozila.
 
-Potrebni su Python, NumPy, OpenCV, FFmpeg i ffprobe.
+## Instalacija i pokretanje (Ubuntu 24.04)
+
+Potreban je Python 3.12 ili noviji. Komande instaliraju Python, Git i FFmpeg,
+preuzimaju projekat i instaliraju NumPy i OpenCV u lokalno Python okruženje.
+FFmpeg paket uključuje i ffprobe.
 
 ```bash
-cd /home/pmaruna/projekat_master_multimedija
+sudo apt update
+sudo apt install -y git python3 python3-venv ffmpeg
+
+git clone https://github.com/pavlemaruna/projekat_master_multimedija.git
+cd projekat_master_multimedija
+
+python3 -m venv .venv
+.venv/bin/python -m pip install -r requirements.txt
 .venv/bin/python run_project.py
 ```
 
-Za novo Python okruženje:
+Otvaranje dobijenog videa:
 
 ```bash
-python3 -m venv .venv
-.venv/bin/python -m pip install -r requirements.txt
+xdg-open outputs/videos/project_video03/project_video03_output.mp4
+```
+
+Za svako naredno pokretanje, iz foldera projekta:
+
+```bash
+.venv/bin/python run_project.py
 ```
 
 ## Fajlovi
